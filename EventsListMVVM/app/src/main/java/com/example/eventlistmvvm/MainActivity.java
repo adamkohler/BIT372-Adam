@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         eventList.setLayoutManager(new LinearLayoutManager(this));
 
         // TODO: Create the ViewModel instance here
+        ViewModelProvider.Factory factory = new ViewModelProvider.NewInstanceFactory();
+        eventVM = new ViewModelProvider(this, factory).get(EventListViewModel.class);
         eventVM.init(getApplicationContext());
 
         EventAdapter adapter = new EventAdapter(eventVM.getEvents().getValue());
@@ -39,6 +41,13 @@ public class MainActivity extends AppCompatActivity {
 
         // TODO: subscribe to view model with an observer
         // This observer should respond to LiveData changes and update the recycler view
+        eventVM.getEvents().observe(this, new Observer<List<Event>>() {
+            @Override
+            public void onChanged(List<Event> events) {
+                adapter.updateData(events);
+                adapter.notifyDataSetChanged();
+            }
+        });
         
     }
 
@@ -46,5 +55,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         // TODO: call the method in ViewModel that is in charge of updating the LiveData
+        eventVM.getEvents();
     }
 }

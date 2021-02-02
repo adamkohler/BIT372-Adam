@@ -1,9 +1,5 @@
 package com.example.eventlistmvvm;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.room.Room;
-
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -13,9 +9,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.eventlistmvvm.roomdb.Event;
-import com.example.eventlistmvvm.roomdb.EventDao;
-import com.example.eventlistmvvm.roomdb.EventDb;
 
 import java.util.HashMap;
 
@@ -45,6 +41,7 @@ public class CreateEventActivity extends AppCompatActivity {
         EditText date = findViewById(R.id.event_date);
         
         // TODO: Create a repo object
+        EventRepository repo = EventRepository.getInstance(getApplicationContext());
 
         createBtn.setOnClickListener((view) -> {
             String titleStr = title.getText().toString();
@@ -56,6 +53,7 @@ public class CreateEventActivity extends AppCompatActivity {
             }
             
             // TODO: store the event in the repo
+            repo.insertEvent(new Event(titleStr, dateStr, images.get(typeKey)));
             title.setText("");
             date.setText("");
             Toast.makeText(this, "Event Created", Toast.LENGTH_LONG).show();
