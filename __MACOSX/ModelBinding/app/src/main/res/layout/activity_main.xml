@@ -51,6 +51,7 @@
             android:ems="10"
             android:hint="email"
             android:inputType="textPersonName"
+            android:text="@={user.email}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/username_input" />

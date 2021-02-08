@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         binding.setLifecycleOwner(this);
         binding.setUser(user);
 
+
         Button btn = findViewById(R.id.next_btn);
         btn.setOnClickListener(v -> {
             startActivity(new Intent(this, FruitActivity.class));
