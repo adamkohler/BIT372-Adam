@@ -1,0 +1,20 @@
+com/example/eventlistmvvm/CreateEventActivity.java
+ com.example.eventlistmvvm.CreateEventActivity
+com/example/eventlistmvvm/EventAdapter.java
+ com.example.eventlistmvvm.EventAdapter
+ com.example.eventlistmvvm.EventViewHolder
+com/example/eventlistmvvm/EventListViewModel.java
+ com.example.eventlistmvvm.EventListViewModel
+com/example/eventlistmvvm/roomdb/EventDao.java
+ com.example.eventlistmvvm.roomdb.EventDao
+com/example/eventlistmvvm/roomdb/Event.java
+ com.example.eventlistmvvm.roomdb.Event
+com/example/eventlistmvvm/MainActivity.java
+ com.example.eventlistmvvm.MainActivity
+ com.example.eventlistmvvm.MainActivity$1
+com/example/eventlistmvvm/roomdb/EventDb.java
+ com.example.eventlistmvvm.roomdb.EventDb
+com/example/eventlistmvvm/EventRepository.java
+ com.example.eventlistmvvm.EventRepository
+com/example/eventlistmvvm/BuildConfig.java
+ com.example.eventlistmvvm.BuildConfig
