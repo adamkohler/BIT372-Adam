@@ -34,6 +34,19 @@ public class MainActivityUITest {
     }
 
     @Test
+    public void enter_pounds() {
+        onView(withId(R.id.pounds_input)).perform(typeText("100000000"));
+        onView(withId(R.id.pounds_convert_btn)).perform(click());
+        onView(withId(R.id.kg_text)).check(matches(withText("45359237.00 Kg")));
+    }
+    @Test
+    public void enter_pounds2(){
+        onView(withId(R.id.pounds_input)).perform(typeText("100"));
+        onView(withId(R.id.pounds_convert_btn)).perform(click());
+        onView(withId(R.id.kg_text)).check(matches(withText("45.36 Kg")));
+    }
+    /*
+    @Test
     public void can_enter_fahrenheit() {
         onView(withId(R.id.fahrenheit_input)).perform(typeText("45"));
         onView(withId(R.id.convert_btn)).perform(click());
@@ -45,4 +58,5 @@ public class MainActivityUITest {
         onView(withId(R.id.convert_btn)).perform(click());
         onView(withId(R.id.celcius_text)).check(matches(withText("ºC")));
     }
+    */
 }

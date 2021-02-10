@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -23,6 +25,18 @@ public class MainActivity extends AppCompatActivity {
                 return;
             double celcius = Converter.toCelcius(Float.parseFloat(finput.getText().toString()));
             ctxt.setText(String.format("%.2f ºC", celcius));
+        });
+
+        Button poundbtn = findViewById(R.id.pounds_convert_btn);
+        EditText pound_input = findViewById(R.id.pounds_input);
+        TextView kg_txt = findViewById(R.id.kg_text);
+
+        poundbtn.setOnClickListener(v -> {
+            if (pound_input.getText().length() == 0)
+                return;
+            double kg = pound_to_kg_converter.toKg(Float.parseFloat(pound_input.getText().toString()));
+            kg_txt.setText(String.format("%.2f Kg", kg));
+
         });
     }
 }
