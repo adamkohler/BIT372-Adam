@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Unit Coverter</string>
+
+    <string-array name="conversionChoices">
+        <item>lb To kg</item>
+        <item>farenheight To celsius</item>
+        <item>cups To gallons</item>
+        <item>feet To miles</item>
+    </string-array>
+
 </resources>

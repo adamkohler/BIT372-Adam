@@ -33,6 +33,7 @@ public class MainActivityUITest {
         assertEquals("com.example.unitcoverter", appContext.getPackageName());
     }
 
+    /*
     @Test
     public void enter_pounds() {
         onView(withId(R.id.pounds_input)).perform(typeText("100000000"));
