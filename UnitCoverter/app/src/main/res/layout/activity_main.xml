@@ -7,19 +7,28 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/fahrenheit_title"
+        android:id="@+id/conversion_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Fahrenheit to Celcius"
+        android:text="Conversion Helper"
         android:textSize="24sp"
         app:layout_constraintHorizontal_bias="0.149"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Spinner
+        android:id="@+id/conversion_selection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/conversion_title" />
+
     <EditText
-        android:id="@+id/fahrenheit_input"
+        android:id="@+id/conversion_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -28,7 +37,7 @@
         app:layout_constraintEnd_toStartOf="@+id/convert_btn"
         app:layout_constraintHorizontal_bias="0.373"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fahrenheit_title" />
+        app:layout_constraintTop_toBottomOf="@+id/conversion_selection" />
 
     <Button
         android:id="@+id/convert_btn"
@@ -39,10 +48,10 @@
         android:layout_marginRight="24dp"
         android:text="Convert"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fahrenheit_title" />
+        app:layout_constraintTop_toBottomOf="@+id/conversion_selection" />
 
     <TextView
-        android:id="@+id/celcius_text"
+        android:id="@+id/converted_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -50,54 +59,10 @@
         app:layout_constraintEnd_toStartOf="@+id/convert_btn"
         app:layout_constraintHorizontal_bias="0.104"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fahrenheit_input" />
+        app:layout_constraintTop_toBottomOf="@+id/conversion_input" />
 
 
-    <TextView
-        android:id="@+id/pounds_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Pounds to Kg"
-        android:textSize="24sp"
-        app:layout_constraintHorizontal_bias="0.149"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/celcius_text" />
 
-    <EditText
-        android:id="@+id/pounds_input"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toStartOf="@+id/convert_btn"
-        app:layout_constraintHorizontal_bias="0.373"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pounds_title" />
-
-    <Button
-        android:id="@+id/pounds_convert_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginRight="24dp"
-        android:text="Convert"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pounds_title" />
-
-    <TextView
-        android:id="@+id/kg_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Kg"
-        app:layout_constraintEnd_toStartOf="@+id/pounds_convert_btn"
-        app:layout_constraintHorizontal_bias="0.104"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pounds_input" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -105,13 +70,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical" />
 
-    <Spinner
-        android:id="@+id/conversion_selection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kg_text" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

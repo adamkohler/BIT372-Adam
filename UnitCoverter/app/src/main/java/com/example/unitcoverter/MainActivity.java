@@ -24,26 +24,33 @@ public class MainActivity extends AppCompatActivity {
         spinner.setAdapter(adapter);
 
         Button fbtn = findViewById(R.id.convert_btn);
+        EditText finput = findViewById(R.id.conversion_input);
+        TextView ctxt = findViewById(R.id.converted_text);
 
-        EditText finput = findViewById(R.id.fahrenheit_input);
-        TextView ctxt = findViewById(R.id.celcius_text);
         fbtn.setOnClickListener(v -> {
             if (finput.getText().length() == 0)
                 return;
-            double celcius = Converter.toCelcius(Float.parseFloat(finput.getText().toString()));
-            ctxt.setText(String.format("%.2f ºC", celcius));
-        });
-
-        Button poundbtn = findViewById(R.id.pounds_convert_btn);
-        EditText pound_input = findViewById(R.id.pounds_input);
-        TextView kg_txt = findViewById(R.id.kg_text);
-
-        poundbtn.setOnClickListener(v -> {
-            if (pound_input.getText().length() == 0)
-                return;
-            double kg = pound_to_kg_converter.toKg(Float.parseFloat(pound_input.getText().toString()));
-            kg_txt.setText(String.format("%.2f Kg", kg));
-
+            else {
+            int spinnerkey = (int) spinner.getSelectedItemId();
+            switch (spinnerkey) {
+                case 0:
+                    double celcius = Converter.toCelcius(Float.parseFloat(finput.getText().toString()));
+                    ctxt.setText(String.format("%.2f ºC", celcius));
+                    break;
+                case 1:
+                    double kg = pound_to_kg_converter.toKg(Float.parseFloat(finput.getText().toString()));
+                    ctxt.setText(String.format("%.4f kilogram", kg));
+                    break;
+                case 2:
+                    double km = milesTokilometers_conversion.toKilo(Float.parseFloat(finput.getText().toString()));
+                    ctxt.setText(String.format("%.2f Kilometers", km));
+                    break;
+                case 3:
+                    double meter = feetTometer_conversion.toMeter(Float.parseFloat(finput.getText().toString()));
+                    ctxt.setText(String.format("%.2f meters", meter));
+                    break;
+            }
+            }
         });
     }
 }
