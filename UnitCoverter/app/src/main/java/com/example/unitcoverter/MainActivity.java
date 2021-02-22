@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
+
         Button fbtn = findViewById(R.id.convert_btn);
         EditText finput = findViewById(R.id.conversion_input);
         TextView ctxt = findViewById(R.id.converted_text);
