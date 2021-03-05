@@ -55,15 +55,15 @@ public class MainActivity extends AppCompatActivity {
                     ctxt.setText(String.format("%.2f ºC", celcius));
                     break;
                 case 1:
-                    double kg = pound_to_kg_converter.toKg(Float.parseFloat(finput.getText().toString()));
+                    double kg = Converter.toKg(Float.parseFloat(finput.getText().toString()));
                     ctxt.setText(String.format("%.4f kilogram", kg));
                     break;
                 case 2:
-                    double km = milesTokilometers_conversion.toKilo(Float.parseFloat(finput.getText().toString()));
+                    double km = Converter.toKilo(Float.parseFloat(finput.getText().toString()));
                     ctxt.setText(String.format("%.2f Kilometers", km));
                     break;
                 case 3:
-                    double meter = feetTometer_conversion.toMeter(Float.parseFloat(finput.getText().toString()));
+                    double meter = Converter.toMeter(Float.parseFloat(finput.getText().toString()));
                     ctxt.setText(String.format("%.2f meters", meter));
                     break;
             }
