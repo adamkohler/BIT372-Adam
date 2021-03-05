@@ -56,25 +56,19 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 1:
                     double kg = Converter.toKg(Float.parseFloat(finput.getText().toString()));
-                    ctxt.setText(String.format("%.4f kilogram", kg));
+                    ctxt.setText(String.format("%.2f Kilograms", kg));
                     break;
                 case 2:
-                    double km = Converter.toKilo(Float.parseFloat(finput.getText().toString()));
+                    double km = Converter.toKilometer(Float.parseFloat(finput.getText().toString()));
                     ctxt.setText(String.format("%.2f Kilometers", km));
                     break;
                 case 3:
                     double meter = Converter.toMeter(Float.parseFloat(finput.getText().toString()));
-                    ctxt.setText(String.format("%.2f meters", meter));
+                    ctxt.setText(String.format("%.2f Meters", meter));
                     break;
             }
             }
         });
 
-        /*if (finput.getText().length() == 0){}
-        else {
-            //textviewmodel.getCurrentInput().setValue(Converter.toCelcius(Float.parseFloat(finput.getText().toString())));
-            double celcius = Converter.toCelcius(Float.parseFloat(finput.getText().toString()));
-            ctxt.setText(String.format("%.2f ºC", celcius));
-        }*/
     }
 }

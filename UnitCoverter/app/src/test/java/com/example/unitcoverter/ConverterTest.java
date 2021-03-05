@@ -19,6 +19,7 @@ public class ConverterTest {
     public void feet_conversion_isCorrect() {
         assertEquals(30.48, Converter.toMeter(100), .01);
     }
+
     @Test
     public void feet_conversion_isCorrect2() {
         assertEquals(1.524, Converter.toMeter(5), .01);
@@ -28,6 +29,7 @@ public class ConverterTest {
     public void miles_conversion_isCorrect() {
         assertEquals(16.09, Converter.toKilo(10), .01);
     }
+
     @Test
     public void miles_conversion_isCorrect2() {
         assertEquals(1.61, Converter.toKilo(1), .01);

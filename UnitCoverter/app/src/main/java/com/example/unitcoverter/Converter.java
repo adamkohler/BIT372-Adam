@@ -9,7 +9,7 @@ public class Converter {
         return feet * 0.3048;
     }
 
-    public static double toKilo(double miles){
+    public static double toKilometer(double miles){
         return miles * 1.609344;
     }
 
